@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class first_exercise {
@@ -15,6 +17,8 @@ public class first_exercise {
             isoscelesTriangle(numberEntered);
             drawDiamond(numberEntered);
             drawDiamondWithName(numberEntered);
+            fizzBuzz();
+            generatePrimes(100);
             System.out.println("You have entered number: " + numberEntered);
         }
         else {
@@ -67,6 +71,38 @@ public class first_exercise {
         System.out.println("Diamond centered with name in middle");
         buildTopDiamondWithName(n);
         buildBottomDiamond(n);
+    }
+
+    private static void fizzBuzz() {
+        for (int i=1; i<=100; i++) {
+            if ((i % 3 == 0) && (i % 5 == 0)) {
+                System.out.println("FizzBuzz");
+            }
+            else if (i % 3 == 0) {
+                System.out.println("Fizz");
+            }
+            else if (i % 5 == 0) {
+                System.out.println("Buzz");
+            }
+            else {
+                System.out.println(i);
+            }
+        }
+    }
+
+    private static List generatePrimes(int n) {
+        List myList = new ArrayList();
+        int findPrimes = 2;
+        while (findPrimes <= n) {
+            if (n % findPrimes == 0){
+                myList.add(findPrimes);
+                n = n / findPrimes;
+            } else {
+                findPrimes ++;
+            }
+        }
+        System.out.println(myList);
+        return myList;
     }
 
 
