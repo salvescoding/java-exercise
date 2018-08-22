@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class first_exercise {
 
+    public static final int MAXFIZZ = 100;
     static Scanner userInput = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -18,7 +19,7 @@ public class first_exercise {
             drawDiamond(numberEntered);
             drawDiamondWithName(numberEntered);
             fizzBuzz();
-            generatePrimes(100);
+            generatePrimes(30);
             System.out.println("You have entered number: " + numberEntered);
         }
         else {
@@ -73,40 +74,6 @@ public class first_exercise {
         buildBottomDiamond(n);
     }
 
-    private static void fizzBuzz() {
-        for (int i=1; i<=100; i++) {
-            if ((i % 3 == 0) && (i % 5 == 0)) {
-                System.out.println("FizzBuzz");
-            }
-            else if (i % 3 == 0) {
-                System.out.println("Fizz");
-            }
-            else if (i % 5 == 0) {
-                System.out.println("Buzz");
-            }
-            else {
-                System.out.println(i);
-            }
-        }
-    }
-
-    private static List generatePrimes(int n) {
-        List myList = new ArrayList();
-        int findPrimes = 2;
-        while (findPrimes <= n) {
-            if (n % findPrimes == 0){
-                myList.add(findPrimes);
-                n = n / findPrimes;
-            } else {
-                findPrimes ++;
-            }
-        }
-        System.out.println(myList);
-        return myList;
-    }
-
-
-
     private static void buildTopDiamond(int n) {
         int numberOfSpace = n - 1;
         for(int i=1; i<=n; i++){
@@ -152,6 +119,48 @@ public class first_exercise {
         }
         System.out.println("Sergio");
     }
+
+    private static void fizzBuzz() {
+        for (int i = 1; i<= MAXFIZZ; i++) {
+            findFizzBuzz(i);
+        }
+    }
+
+    private static List generatePrimes(int n) {
+        List myList = new ArrayList();
+        return getPrimes(n, myList);
+    }
+
+    private static List getPrimes(int n, List myList) {
+        int findPrimes = 2;
+        while (findPrimes <= n) {
+            if (n % findPrimes == 0){
+                myList.add(findPrimes);
+                n = n / findPrimes;
+            } else {
+                findPrimes ++;
+            }
+        }
+        System.out.println(myList);
+        return myList;
+    }
+
+    private static void findFizzBuzz(int i) {
+        if ((i % 3 == 0) && (i % 5 == 0)) {
+            System.out.println("FizzBuzz");
+        }
+        else if (i % 3 == 0) {
+            System.out.println("Fizz");
+        }
+        else if (i % 5 == 0) {
+            System.out.println("Buzz");
+        }
+        else {
+            System.out.println(i);
+        }
+    }
+
+
 
 
 
