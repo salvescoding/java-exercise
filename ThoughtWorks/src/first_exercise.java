@@ -14,6 +14,7 @@ public class first_exercise {
             drawRightTriangle(numberEntered);
             isoscelesTriangle(numberEntered);
             drawDiamond(numberEntered);
+            drawDiamondWithName(numberEntered);
             System.out.println("You have entered number: " + numberEntered);
         }
         else {
@@ -62,6 +63,14 @@ public class first_exercise {
         buildBottomDiamond(n);
     }
 
+    private static void drawDiamondWithName(int n) {
+        System.out.println("Diamond centered with name in middle");
+        buildTopDiamondWithName(n);
+        buildBottomDiamond(n);
+    }
+
+
+
     private static void buildTopDiamond(int n) {
         int numberOfSpace = n - 1;
         for(int i=1; i<=n; i++){
@@ -90,6 +99,22 @@ public class first_exercise {
             System.out.println();
             increaseSpace++;
         }
+    }
+
+    private static void buildTopDiamondWithName(int n) {
+        int numberOfSpace = n - 1;
+        for(int i=1; i<n; i++){
+
+            for(int j=numberOfSpace; j>0; j--){
+                System.out.print(" ");
+            }
+            for(int k=1; k<=2*i-1; k++){
+                System.out.print("*");
+            }
+            System.out.println();
+            numberOfSpace--;
+        }
+        System.out.println("Sergio");
     }
 
 
