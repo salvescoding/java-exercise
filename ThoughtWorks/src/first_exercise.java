@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class first_exercise {
 
-    public static final int MAXFIZZ = 100;
+    private static final int MAXFIZZ = 100;
     static Scanner userInput = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -27,51 +27,56 @@ public class first_exercise {
         }
     }
 
-    private static void printOne() {
-        System.out.println("Print one *");
-        System.out.println("*");
+    public static void printOne() {
+        printTitle("Print one * ");
+        printChar('*', 1);
     }
 
-    private static void drawHorizontalLine(int n) {
-        String repeated = new String(new char[n]).replace("\0", "*");
-        System.out.println("Draw Horizontal Line");
-        System.out.println(repeated);
+    public static void drawHorizontalLine(int n) {
+        printTitle("Draw Horizontal Line");
+        printChar('*', n);
     }
 
-    private static void drawVerticalLine(int n) {
-        System.out.println("Draw Vertical Line");
+    public static void drawVerticalLine(int n) {
+        printTitle("Draw Vertical Line");
         while (n > 0) {
-            System.out.println("*");
+            printChar('*', 1);
             n--;
         }
     }
 
-    private static void drawRightTriangle(int n) {
+    public static void drawRightTriangle(int n) {
+        printTitle("Draw Right Triangle");
         int numberOfTimes = 1;
-        System.out.println("Draw Right Triangle");
         while (n > 0) {
-            String repeated = new String(new char[numberOfTimes]).replace("\0", "*");
-            System.out.println(repeated);
+            printChar('*', numberOfTimes);
             n--;
             numberOfTimes++;
         }
     }
 
-    private static void isoscelesTriangle(int n) {
-        System.out.println("Isosceles Triangle");
+    public static void isoscelesTriangle(int n) {
+        printTitle("Isosceles Triangle");
         buildTopDiamond(n);
     }
 
-    private static void drawDiamond(int n) {
-        System.out.println("Draw Diamond centered");
+    public static void drawDiamond(int n) {
+        printTitle("Draw Diamond centered");
         buildTopDiamond(n);
         buildBottomDiamond(n);
     }
 
-    private static void drawDiamondWithName(int n) {
-        System.out.println("Diamond centered with name in middle");
+    public static void drawDiamondWithName(int n) {
+        printTitle("Diamond centered with name in middle");
         buildTopDiamondWithName(n);
         buildBottomDiamond(n);
+    }
+
+    private static void printChar(char character, int numberOfTimes) {
+        for (int i = 0; i < numberOfTimes; i++) {
+            System.out.print(character);
+        }
+        System.out.println();
     }
 
     private static void buildTopDiamond(int n) {
@@ -120,18 +125,24 @@ public class first_exercise {
         System.out.println("Sergio");
     }
 
-    private static void fizzBuzz() {
+    public static void fizzBuzz() {
+        printTitle("Print FizzBuzz");
         for (int i = 1; i<= MAXFIZZ; i++) {
             findFizzBuzz(i);
         }
     }
 
-    private static List generatePrimes(int n) {
-        List myList = new ArrayList();
-        return getPrimes(n, myList);
+    public static List generatePrimes(int n) {
+        printTitle("Generate prime numbers till " + n);
+        return getPrimes(n);
     }
 
-    private static List getPrimes(int n, List myList) {
+    private static void printTitle(String title) {
+        System.out.println(title);
+    }
+
+    private static List getPrimes(int n) {
+        List myList = new ArrayList();
         int findPrimes = 2;
         while (findPrimes <= n) {
             if (n % findPrimes == 0){
@@ -159,9 +170,4 @@ public class first_exercise {
             System.out.println(i);
         }
     }
-
-
-
-
-
 }
