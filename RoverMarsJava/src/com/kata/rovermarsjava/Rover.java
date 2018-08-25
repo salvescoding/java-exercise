@@ -4,17 +4,29 @@ public class Rover {
 
     private int x;
     private int y;
-    private String orientation;
+    private char orientation;
 
     public int getX() { return x; }
 
     public int getY() { return y; }
 
-    public String getOrientation() { return orientation; }
+    public char getOrientation() { return orientation; }
 
-    public Rover(int x, int y, String orientation) {
+    public String getRoverPosition() {
+        String position = getPositionToString();
+        return position;
+    }
+
+    public Rover(int x, int y, char orientation) {
         this.x = x;
         this.y = y;
         this.orientation = orientation;
+    }
+
+    private String getPositionToString() {
+        String x = Integer.toString(getX());
+        String y = Integer.toString(getY());
+        String o = String.valueOf(getOrientation());
+        return "X: " + x + ", Y: " + y + ", Orientation: " + o;
     }
 }

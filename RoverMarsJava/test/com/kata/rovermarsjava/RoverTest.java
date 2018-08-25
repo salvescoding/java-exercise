@@ -13,8 +13,7 @@ class RoverTest {
 
     @BeforeEach
     public void beforeRoverTest() {
-        rover = new Rover(1, 2, "N");
-
+        rover = new Rover(1, 2, 'N');
     }
 
     @Test
@@ -26,5 +25,17 @@ class RoverTest {
     public void getRoverPositionY() {
         assertEquals(2, rover.getY());
     }
+
+    @Test
+    public void getRoverOrientation() {
+        assertEquals('N', rover.getOrientation());
+    }
+
+    @Test
+    public void getRoverPosition() {
+        String expected = "X: 1, Y: 2, Orientation: N";
+        assertEquals(expected, rover.getRoverPosition());
+    }
+
 
 }
