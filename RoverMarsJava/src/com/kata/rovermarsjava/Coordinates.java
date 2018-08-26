@@ -40,6 +40,13 @@ public class Coordinates {
         setMap(map);
     }
 
+    public void move(char orientation) {
+        switch (orientation) {
+            case 'N': setX(getX() + 1);
+            case 'E': setY(getY() + 1);
+
+        }
+    }
 
 
 

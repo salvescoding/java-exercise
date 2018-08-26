@@ -34,6 +34,20 @@ class CoordinatesTest {
         assertEquals(5, coordinates.getMap().getY());
     }
 
+    @Test
+    public void positionXShouldIncreaseWhenMoveWithOrientationNorth() {
+        int expected = coordinates.getX() + 1;
+        coordinates.move(coordinates.getDirection());
+        assertEquals(expected, coordinates.getX());
+    }
+
+    @Test
+    public void positionYShouldIncreaseWhenMoveWithOrientationEast() {
+        int expected = coordinates.getY() + 1;
+        coordinates.setDirection('E');
+        coordinates.move(coordinates.getDirection());
+        assertEquals(expected, coordinates.getY());
+    }
 
 
 
