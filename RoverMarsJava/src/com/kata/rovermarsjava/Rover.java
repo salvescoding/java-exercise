@@ -2,31 +2,18 @@ package com.kata.rovermarsjava;
 
 public class Rover {
 
-    private int x;
-    private int y;
-    private char orientation;
+    private Coordinates coordinates;
 
-    public int getX() { return x; }
-
-    public int getY() { return y; }
-
-    public char getOrientation() { return orientation; }
-
-    public String getRoverPosition() {
-        String position = getPositionToString();
-        return position;
+    public Coordinates getCoordinates() {
+        return coordinates;
     }
 
-    public Rover(int x, int y, char orientation) {
-        this.x = x;
-        this.y = y;
-        this.orientation = orientation;
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
     }
 
-    private String getPositionToString() {
-        String x = Integer.toString(getX());
-        String y = Integer.toString(getY());
-        String o = String.valueOf(getOrientation());
-        return "X: " + x + ", Y: " + y + ", Orientation: " + o;
+    public Rover(Coordinates coordinates) {
+        setCoordinates(coordinates);
     }
+
 }

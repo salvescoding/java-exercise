@@ -10,32 +10,17 @@ import static org.junit.jupiter.api.Assertions.*;
 class RoverTest {
 
     private Rover rover;
+    private Coordinates coordinates;
+    private Map map;
 
     @BeforeEach
     public void beforeRoverTest() {
-        rover = new Rover(1, 2, 'N');
+        map = new Map(5,5);
+        coordinates = new Coordinates(1, 2, 'N', map);
+        rover = new Rover(coordinates);
     }
 
-    @Test
-    public void getRoverPositionX() {
-        assertEquals(1, rover.getX());
-    }
 
-    @Test
-    public void getRoverPositionY() {
-        assertEquals(2, rover.getY());
-    }
-
-    @Test
-    public void getRoverOrientation() {
-        assertEquals('N', rover.getOrientation());
-    }
-
-    @Test
-    public void getRoverPosition() {
-        String expected = "X: 1, Y: 2, Orientation: N";
-        assertEquals(expected, rover.getRoverPosition());
-    }
 
 
 }
