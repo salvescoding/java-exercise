@@ -37,6 +37,7 @@ class CoordinatesTest {
     @Test
     public void positionXShouldIncreaseWhenMoveWithOrientationNorth() {
         int expected = coordinates.getX() + 1;
+        coordinates.setDirection('N');
         coordinates.move(coordinates.getDirection());
         assertEquals(expected, coordinates.getX());
     }
@@ -49,6 +50,28 @@ class CoordinatesTest {
         assertEquals(expected, coordinates.getY());
     }
 
+    @Test
+    public void positionXShouldDecreaseWhenMoveWithOrientationSouth() {
+        int expected = coordinates.getX() - 1;
+        coordinates.setDirection('S');
+        coordinates.move(coordinates.getDirection());
+        assertEquals(expected, coordinates.getX());
+    }
+
+    @Test
+    public void positionYShouldDecreaseWhenMoveWithOrientationWest() {
+        int expected = coordinates.getY() - 1;
+        coordinates.setDirection('W');
+        coordinates.move(coordinates.getDirection());
+        assertEquals(expected, coordinates.getY());
+    }
+
+    @Test
+    public void orientationShouldChangeWhenTurnRight() {
+        char expected = 'E';
+        coordinates.turnRight();
+        assertEquals(expected, coordinates.getDirection());
+    }
 
 
 }

@@ -1,13 +1,13 @@
 package com.kata.rovermarsjava;
 
+import java.util.*;
+
 public class Coordinates {
 
     private int x;
     private int y;
     private char direction;
     private Map map;
-    private char[] compass = new char[]{'N', 'E', 'S', 'W'};
-
 
     public int getX() { return x; }
 
@@ -43,9 +43,18 @@ public class Coordinates {
     public void move(char orientation) {
         switch (orientation) {
             case 'N': setX(getX() + 1);
+                      break;
             case 'E': setY(getY() + 1);
-
+                      break;
+            case 'S': setX(getX() - 1);
+                      break;
+            case 'W': setY(getY() - 1);
+                      break;
         }
+    }
+
+    public void turnRight() {
+        setDirection('E');
     }
 
 
