@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/kata/rovermarsjava/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kata/rovermarsjava/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kata/rovermarsjava/RoverMarsJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kata/rovermarsjava/RoverMarsJava.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/com/kata/rovermarsjava/CoordinatesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/kata/rovermarsjava/CoordinatesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RoverMarsJavaSA/src/com/twu/rovermars/RoverMarsTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../TWU_Biblioteca-master/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TWU_Biblioteca-master/.idea/workspace.xml" afterDir="false" />
@@ -58,13 +57,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="5118" />
+          <entry key="java" value="5700" />
           <entry key="txt" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5118" />
+          <entry key="JAVA" value="5700" />
           <entry key="PLAIN_TEXT" value="13" />
         </counts>
       </usages-collector>
@@ -72,11 +71,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/kata/rovermarsjava/RoverMarsJava.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="309">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,11 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/kata/rovermarsjava/Coordinates.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
-              <folding>
-                <element signature="e#1193#1194#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="122">
+              <caret line="58" column="47" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -130,11 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/kata/rovermarsjava/CoordinatesTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-206">
-              <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+            <state relative-caret-position="340">
+              <caret line="105" column="32" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#650#651#0" expanded="true" />
@@ -203,8 +199,8 @@
         <option value="$PROJECT_DIR$/src/com/kata/rovermarsjava/input.txt" />
         <option value="$PROJECT_DIR$/src/input.txt" />
         <option value="$PROJECT_DIR$/src/com/kata/rovermarsjava/RoverMarsJava.java" />
-        <option value="$PROJECT_DIR$/test/com/kata/rovermarsjava/CoordinatesTest.java" />
         <option value="$PROJECT_DIR$/src/com/kata/rovermarsjava/Coordinates.java" />
+        <option value="$PROJECT_DIR$/test/com/kata/rovermarsjava/CoordinatesTest.java" />
       </list>
     </option>
   </component>
@@ -265,7 +261,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535399004404" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535410001668" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -318,7 +314,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CoordinatesTest.orientationShouldChangeWhenTurnRight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CoordinatesTest.orientationEastShouldChangeToSouthWhenTurnRight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RoverMarsJava" />
       <extension name="coverage">
         <pattern>
@@ -328,13 +324,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.kata.rovermarsjava" />
       <option name="MAIN_CLASS_NAME" value="com.kata.rovermarsjava.CoordinatesTest" />
-      <option name="METHOD_NAME" value="orientationShouldChangeWhenTurnRight" />
+      <option name="METHOD_NAME" value="orientationEastShouldChangeToSouthWhenTurnRight" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CoordinatesTest.positionXShouldDecreaseWhenMoveWithOrientationSouth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CoordinatesTest.orientationNorthShouldChangeToNorthAfter360Degrees" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RoverMarsJava" />
       <extension name="coverage">
         <pattern>
@@ -344,13 +340,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.kata.rovermarsjava" />
       <option name="MAIN_CLASS_NAME" value="com.kata.rovermarsjava.CoordinatesTest" />
-      <option name="METHOD_NAME" value="positionXShouldDecreaseWhenMoveWithOrientationSouth" />
+      <option name="METHOD_NAME" value="orientationNorthShouldChangeToNorthAfter360Degrees" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CoordinatesTest.positionYShouldDecreaseWhenMoveWithOrientationWest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CoordinatesTest.orientationSouthShouldChangeToWestWhenTurnRight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RoverMarsJava" />
       <extension name="coverage">
         <pattern>
@@ -360,13 +356,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.kata.rovermarsjava" />
       <option name="MAIN_CLASS_NAME" value="com.kata.rovermarsjava.CoordinatesTest" />
-      <option name="METHOD_NAME" value="positionYShouldDecreaseWhenMoveWithOrientationWest" />
+      <option name="METHOD_NAME" value="orientationSouthShouldChangeToWestWhenTurnRight" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CoordinatesTest.positionYShouldIncreaseWhenMoveWithOrientationEast" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CoordinatesTest.orientationWestShouldChangeToNorthWhenTurnRight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RoverMarsJava" />
       <extension name="coverage">
         <pattern>
@@ -376,7 +372,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.kata.rovermarsjava" />
       <option name="MAIN_CLASS_NAME" value="com.kata.rovermarsjava.CoordinatesTest" />
-      <option name="METHOD_NAME" value="positionYShouldIncreaseWhenMoveWithOrientationEast" />
+      <option name="METHOD_NAME" value="orientationWestShouldChangeToNorthWhenTurnRight" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -385,18 +381,18 @@
     <list>
       <item itemvalue="Application.RoverMarsJava" />
       <item itemvalue="JUnit.CoordinatesTest" />
-      <item itemvalue="JUnit.CoordinatesTest.positionYShouldIncreaseWhenMoveWithOrientationEast" />
-      <item itemvalue="JUnit.CoordinatesTest.positionXShouldDecreaseWhenMoveWithOrientationSouth" />
-      <item itemvalue="JUnit.CoordinatesTest.positionYShouldDecreaseWhenMoveWithOrientationWest" />
-      <item itemvalue="JUnit.CoordinatesTest.orientationShouldChangeWhenTurnRight" />
+      <item itemvalue="JUnit.CoordinatesTest.orientationEastShouldChangeToSouthWhenTurnRight" />
+      <item itemvalue="JUnit.CoordinatesTest.orientationSouthShouldChangeToWestWhenTurnRight" />
+      <item itemvalue="JUnit.CoordinatesTest.orientationWestShouldChangeToNorthWhenTurnRight" />
+      <item itemvalue="JUnit.CoordinatesTest.orientationNorthShouldChangeToNorthAfter360Degrees" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CoordinatesTest" />
-        <item itemvalue="JUnit.CoordinatesTest.orientationShouldChangeWhenTurnRight" />
-        <item itemvalue="JUnit.CoordinatesTest.positionYShouldDecreaseWhenMoveWithOrientationWest" />
-        <item itemvalue="JUnit.CoordinatesTest.positionXShouldDecreaseWhenMoveWithOrientationSouth" />
-        <item itemvalue="JUnit.CoordinatesTest.positionYShouldIncreaseWhenMoveWithOrientationEast" />
+        <item itemvalue="JUnit.CoordinatesTest.orientationNorthShouldChangeToNorthAfter360Degrees" />
+        <item itemvalue="JUnit.CoordinatesTest.orientationWestShouldChangeToNorthWhenTurnRight" />
+        <item itemvalue="JUnit.CoordinatesTest.orientationSouthShouldChangeToWestWhenTurnRight" />
+        <item itemvalue="JUnit.CoordinatesTest.orientationEastShouldChangeToSouthWhenTurnRight" />
       </list>
     </recent_temporary>
   </component>
@@ -414,27 +410,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CoordinatesTest_positionXShouldDecreaseWhenMoveWithOrientationSouth - 2018.08.27 at 20h 04m 25s.xml">
-      <configuration name="CoordinatesTest.positionXShouldDecreaseWhenMoveWithOrientationSouth" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CoordinatesTest_positionYShouldDecreaseWhenMoveWithOrientationWest - 2018.08.27 at 20h 05m 16s.xml">
-      <configuration name="CoordinatesTest.positionYShouldDecreaseWhenMoveWithOrientationWest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CoordinatesTest - 2018.08.27 at 20h 07m 46s.xml">
-      <configuration name="CoordinatesTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CoordinatesTest - 2018.08.27 at 20h 08m 57s.xml">
-      <configuration name="CoordinatesTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CoordinatesTest - 2018.08.27 at 20h 11m 12s.xml">
-      <configuration name="CoordinatesTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CoordinatesTest - 2018.08.27 at 20h 15m 49s.xml">
-      <configuration name="CoordinatesTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CoordinatesTest - 2018.08.27 at 20h 16m 50s.xml">
-      <configuration name="CoordinatesTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CoordinatesTest - 2018.08.27 at 20h 19m 25s.xml">
       <configuration name="CoordinatesTest" configurationId="JUnit" />
     </history-entry>
@@ -443,6 +418,27 @@
     </history-entry>
     <history-entry file="CoordinatesTest - 2018.08.27 at 20h 43m 28s.xml">
       <configuration name="CoordinatesTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CoordinatesTest_orientationShouldChangeWhenTurnRight - 2018.08.27 at 22h 04m 56s.xml">
+      <configuration name="CoordinatesTest.orientationShouldChangeWhenTurnRight" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CoordinatesTest_orientationShouldChangeWhenTurnRight - 2018.08.27 at 22h 14m 36s.xml">
+      <configuration name="CoordinatesTest.orientationShouldChangeWhenTurnRight" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CoordinatesTest_orientationShouldChangeWhenTurnRight - 2018.08.27 at 22h 19m 12s.xml">
+      <configuration name="CoordinatesTest.orientationShouldChangeWhenTurnRight" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CoordinatesTest_orientationEastShouldChangeToSouthWhenTurnRight - 2018.08.27 at 22h 20m 45s.xml">
+      <configuration name="CoordinatesTest.orientationEastShouldChangeToSouthWhenTurnRight" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CoordinatesTest - 2018.08.27 at 22h 20m 53s.xml">
+      <configuration name="CoordinatesTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CoordinatesTest_orientationSouthShouldChangeToWestWhenTurnRight - 2018.08.27 at 23h 44m 54s.xml">
+      <configuration name="CoordinatesTest.orientationSouthShouldChangeToWestWhenTurnRight" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CoordinatesTest_orientationWestShouldChangeToNorthWhenTurnRight - 2018.08.27 at 23h 45m 34s.xml">
+      <configuration name="CoordinatesTest.orientationWestShouldChangeToNorthWhenTurnRight" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -463,7 +459,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Learn" order="3" weight="0.32956383" />
       <window_info id="Capture Tool" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.26171243" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.26171243" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.3286385" />
@@ -472,7 +468,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.3286385" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.3286385" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.3286385" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.3286385" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39906102" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -578,34 +574,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kata/rovermarsjava/RoverMarsJava.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kata/rovermarsjava/Coordinates.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
-          <folding>
-            <element signature="e#1193#1194#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="122">
+          <caret line="58" column="47" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/kata/rovermarsjava/CoordinatesTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-206">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        <state relative-caret-position="340">
+          <caret line="105" column="32" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#650#651#0" expanded="true" />
             <element signature="e#711#712#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kata/rovermarsjava/RoverMarsJava.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

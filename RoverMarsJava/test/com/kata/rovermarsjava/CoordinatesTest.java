@@ -67,11 +67,44 @@ class CoordinatesTest {
     }
 
     @Test
-    public void orientationShouldChangeWhenTurnRight() {
+    public void orientationNorthShouldChangeToEastWhenTurnRight() {
         char expected = 'E';
         coordinates.turnRight();
         assertEquals(expected, coordinates.getDirection());
     }
 
+    @Test
+    public void orientationEastShouldChangeToSouthWhenTurnRight() {
+        char expected = 'S';
+        coordinates.setDirection('E');
+        coordinates.turnRight();
+        assertEquals(expected, coordinates.getDirection());
+    }
+
+    @Test
+    public void orientationSouthShouldChangeToWestWhenTurnRight() {
+        char expected = 'W';
+        coordinates.setDirection('S');
+        coordinates.turnRight();
+        assertEquals(expected, coordinates.getDirection());
+    }
+
+    @Test
+    public void orientationWestShouldChangeToNorthWhenTurnRight() {
+        char expected = 'N';
+        coordinates.setDirection('W');
+        coordinates.turnRight();
+        assertEquals(expected, coordinates.getDirection());
+    }
+
+    @Test
+    public void orientationNorthShouldChangeToNorthAfter360Degrees() {
+        char expected = 'N';
+        coordinates.turnRight();
+        coordinates.turnRight();
+        coordinates.turnRight();
+        coordinates.turnRight();
+        assertEquals(expected, coordinates.getDirection());
+    }
 
 }

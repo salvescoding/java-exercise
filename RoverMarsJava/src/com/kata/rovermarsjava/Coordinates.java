@@ -8,6 +8,7 @@ public class Coordinates {
     private int y;
     private char direction;
     private Map map;
+    private static char[] compass = new char[]{'N', 'E', 'S', 'W'};
 
     public int getX() { return x; }
 
@@ -54,9 +55,26 @@ public class Coordinates {
     }
 
     public void turnRight() {
-        setDirection('E');
+        int indexOrientation = getIndexOfCompass();
+        if (indexOrientation == (compass.length - 1)) {
+            setDirection('N');
+        }
+        else {
+            int newIndex = indexOrientation + 1;
+            char newOrient = compass[newIndex];
+            setDirection(newOrient);
+        }
     }
 
+    private int getIndexOfCompass() {
+        int index = 0;
+        for (int i = 0; i < compass.length; i++) {
+            if (getDirection() == compass[i]) {
+                index = i;
+            }
+        }
+        return index;
+    }
 
 
 }
