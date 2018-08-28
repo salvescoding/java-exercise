@@ -22,6 +22,11 @@ public class Rover {
         }
     }
 
+    public String getPosition() {
+        String position = getCoordinates().toString();
+        return position;
+    }
+
     private void runCommand(char command) {
         switch (command) {
             case 'M':

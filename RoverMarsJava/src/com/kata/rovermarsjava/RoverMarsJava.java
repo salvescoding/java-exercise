@@ -25,6 +25,8 @@ public class RoverMarsJava {
         setMap();
         getRoversInitialLocation();
         landRovers();
+        moveRovers();
+        OutputFinalPosition();
     }
 
 
@@ -78,4 +80,15 @@ public class RoverMarsJava {
         }
     }
 
+    private static void moveRovers() {
+        for (int i = 0; i < roversCommands.size(); i++) {
+            rovers.get(i).receiveCommands(roversCommands.get(i));
+        }
+    }
+
+    private static void OutputFinalPosition() {
+        for (Rover rover : rovers) {
+            System.out.println(rover.getPosition());
+        }
+    }
 }
