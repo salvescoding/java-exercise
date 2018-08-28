@@ -7,7 +7,6 @@ public class Rover {
     public Coordinates getCoordinates() {
         return coordinates;
     }
-
     public void setCoordinates(Coordinates coordinates) {
         this.coordinates = coordinates;
     }
@@ -15,5 +14,27 @@ public class Rover {
     public Rover(Coordinates coordinates) {
         setCoordinates(coordinates);
     }
+
+    public void receiveCommands(String commands) {
+        for (int i = 0; i < commands.length(); i++) {
+            char command = commands.charAt(i);
+            runCommand(command);
+        }
+    }
+
+    private void runCommand(char command) {
+        switch (command) {
+            case 'M':
+                coordinates.move(coordinates.getDirection());
+                break;
+            case 'L':
+                coordinates.turnLeft();
+                break;
+            case 'R':
+                coordinates.turnRight();
+                break;
+        }
+    }
+
 
 }

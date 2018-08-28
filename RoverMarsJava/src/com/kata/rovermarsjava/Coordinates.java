@@ -43,13 +43,13 @@ public class Coordinates {
 
     public void move(char orientation) {
         switch (orientation) {
-            case 'N': setX(getX() + 1);
+            case 'N': setY(getY() + 1);
                       break;
-            case 'E': setY(getY() + 1);
+            case 'E': setX(getX() + 1);
                       break;
-            case 'S': setX(getX() - 1);
+            case 'S': setY(getY() - 1);
                       break;
-            case 'W': setY(getY() - 1);
+            case 'W': setX(getX() - 1);
                       break;
         }
     }
@@ -61,9 +61,22 @@ public class Coordinates {
         }
         else {
             int newIndex = indexOrientation + 1;
-            char newOrient = compass[newIndex];
-            setDirection(newOrient);
+            char newOrientation = compass[newIndex];
+            setDirection(newOrientation);
         }
+    }
+
+    public void turnLeft() {
+        int indexOrientation = getIndexOfCompass();
+        if (indexOrientation == 0) {
+            setDirection('W');
+        }
+        else {
+            int newIndex = indexOrientation - 1;
+            char newOrientation = compass[newIndex];
+            setDirection(newOrientation);
+        }
+
     }
 
     private int getIndexOfCompass() {

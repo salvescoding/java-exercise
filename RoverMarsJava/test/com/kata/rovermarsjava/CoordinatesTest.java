@@ -35,35 +35,35 @@ class CoordinatesTest {
     }
 
     @Test
-    public void positionXShouldIncreaseWhenMoveWithOrientationNorth() {
-        int expected = coordinates.getX() + 1;
+    public void positionYShouldIncreaseWhenMoveWithOrientationNorth() {
+        int expected = coordinates.getY() + 1;
         coordinates.setDirection('N');
         coordinates.move(coordinates.getDirection());
-        assertEquals(expected, coordinates.getX());
+        assertEquals(expected, coordinates.getY());
     }
 
     @Test
-    public void positionYShouldIncreaseWhenMoveWithOrientationEast() {
-        int expected = coordinates.getY() + 1;
+    public void positionXShouldIncreaseWhenMoveWithOrientationEast() {
+        int expected = coordinates.getX() + 1;
         coordinates.setDirection('E');
         coordinates.move(coordinates.getDirection());
-        assertEquals(expected, coordinates.getY());
-    }
-
-    @Test
-    public void positionXShouldDecreaseWhenMoveWithOrientationSouth() {
-        int expected = coordinates.getX() - 1;
-        coordinates.setDirection('S');
-        coordinates.move(coordinates.getDirection());
         assertEquals(expected, coordinates.getX());
     }
 
     @Test
-    public void positionYShouldDecreaseWhenMoveWithOrientationWest() {
+    public void positionYShouldDecreaseWhenMoveWithOrientationSouth() {
         int expected = coordinates.getY() - 1;
-        coordinates.setDirection('W');
+        coordinates.setDirection('S');
         coordinates.move(coordinates.getDirection());
         assertEquals(expected, coordinates.getY());
+    }
+
+    @Test
+    public void positionXShouldDecreaseWhenMoveWithOrientationWest() {
+        int expected = coordinates.getX() - 1;
+        coordinates.setDirection('W');
+        coordinates.move(coordinates.getDirection());
+        assertEquals(expected, coordinates.getX());
     }
 
     @Test
@@ -106,5 +106,38 @@ class CoordinatesTest {
         coordinates.turnRight();
         assertEquals(expected, coordinates.getDirection());
     }
+
+    @Test
+    public void orientationNorthShouldChangeToWestWhenTurnLeft() {
+        char expected = 'W';
+        coordinates.turnLeft();
+        assertEquals(expected, coordinates.getDirection());
+    }
+
+    @Test
+    public void orientationWestShouldChangeToSouthWhenTurnLeft() {
+        char expected = 'S';
+        coordinates.setDirection('W');
+        coordinates.turnLeft();
+        assertEquals(expected, coordinates.getDirection());
+    }
+
+    @Test
+    public void orientationSouthShouldChangeToEastWhenTurnLeft() {
+        char expected = 'E';
+        coordinates.setDirection('S');
+        coordinates.turnLeft();
+        assertEquals(expected, coordinates.getDirection());
+    }
+
+    @Test
+    public void orientationEastShouldChangeToNorthWhenTurnLeft() {
+        char expected = 'N';
+        coordinates.setDirection('E');
+        coordinates.turnLeft();
+        assertEquals(expected, coordinates.getDirection());
+    }
+
+
 
 }
