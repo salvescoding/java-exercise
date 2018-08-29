@@ -41,16 +41,41 @@ public class Coordinates {
 
     public void move(char orientation) {
         switch (orientation) {
-            case 'N': setY(getY() + 1);
+            case 'N': moveNorth();
                       break;
-            case 'E': setX(getX() + 1);
+            case 'E': moveEast();
                       break;
-            case 'S': setY(getY() - 1);
+            case 'S': moveSouth();
                       break;
-            case 'W': setX(getX() - 1);
+            case 'W': moveWest();
                       break;
         }
     }
+
+    private void moveWest() {
+        if (getX() > 0)  {
+            setX(getX() - 1);
+        }
+    }
+
+    private void moveSouth() {
+        if (getY() > 0) {
+            setY(getY() - 1);
+        }
+    }
+
+    private void moveEast() {
+        if (getX() < getMap().getX()) {
+            setX(getX() + 1);
+        }
+    }
+
+    private void moveNorth() {
+        if (getY() < getMap().getY()) {
+            setY(getY() + 1);
+        }
+    }
+
 
     public void turnRight() {
         int indexOrientation = getIndexOfCompass();
@@ -76,6 +101,7 @@ public class Coordinates {
         }
 
     }
+
 
     private int getIndexOfCompass() {
         int index = 0;

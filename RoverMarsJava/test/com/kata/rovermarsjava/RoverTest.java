@@ -72,6 +72,30 @@ class RoverTest {
         assertEquals('E', roverTwo.getCoordinates().getDirection());
     }
 
+    @Test
+    void roverShouldNotExitTheMapGridWhenMovingNorth() {
+        rover.receiveCommands("LMLMLMLMMMMMR");
+        assertEquals(1, rover.getCoordinates().getX());
+        assertEquals(5, rover.getCoordinates().getY());
+        assertEquals('E', rover.getCoordinates().getDirection());
+    }
+
+    @Test
+    void roverShouldNotExitTheMapGridWhenMovingEast() {
+        rover.receiveCommands("RMMMMM");
+        assertEquals(5, rover.getCoordinates().getX());
+        assertEquals(2, rover.getCoordinates().getY());
+        assertEquals('E', rover.getCoordinates().getDirection());
+    }
+
+    @Test
+    void roverShouldNotExitTheMapGridWhenMovingMinSouthAndMinWest() {
+        rover.receiveCommands("LMMLMMMLMMLM");
+        assertEquals(2, rover.getCoordinates().getX());
+        assertEquals(1, rover.getCoordinates().getY());
+        assertEquals('N', rover.getCoordinates().getDirection());
+    }
+
 
 
 
