@@ -1,24 +1,22 @@
 package com.kata.rovermarsjava;
 
-import java.util.*;
-
 public class Coordinates {
 
     private int x;
     private int y;
     private char direction;
     private Map map;
-    private static char[] compass = new char[]{'N', 'E', 'S', 'W'};
+    private static final char[] compass = new char[]{'N', 'E', 'S', 'W'};
 
     public int getX() { return x; }
 
-    public void setX(int x) {
+    private void setX(int x) {
         this.x = x;
     }
 
     public int getY() { return y; }
 
-    public void setY(int y) {
+    private void setY(int y) {
         this.y = y;
     }
 
@@ -30,7 +28,7 @@ public class Coordinates {
 
     public Map getMap() { return map; }
 
-    public void setMap(Map map) {
+    private void setMap(Map map) {
         this.map = map;
     }
 

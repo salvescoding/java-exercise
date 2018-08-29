@@ -1,13 +1,13 @@
 package com.kata.rovermarsjava;
 
-public class Rover {
+class Rover {
 
     private Coordinates coordinates;
 
     public Coordinates getCoordinates() {
         return coordinates;
     }
-    public void setCoordinates(Coordinates coordinates) {
+    private void setCoordinates(Coordinates coordinates) {
         this.coordinates = coordinates;
     }
 
@@ -23,8 +23,7 @@ public class Rover {
     }
 
     public String getPosition() {
-        String position = getCoordinates().toString();
-        return position;
+        return getCoordinates().toString();
     }
 
     private void runCommand(char command) {

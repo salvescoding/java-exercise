@@ -8,22 +8,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class RoverMarsJava {
+class RoverMarsJava {
 
-    private static List<String> instructions = new ArrayList<String>();
+    private static final List<String> instructions = new ArrayList<String>();
     private static Map map;
-    private static Coordinates coordinates;
-    private static Rover rover;
-    private static List<String> roversLandingPosition = new ArrayList<String>();
-    private static List<String> roversCommands = new ArrayList<String>();
-    private static List<Rover> rovers = new ArrayList<Rover>();
+    private static final List<String> roversLandingPosition = new ArrayList<String>();
+    private static final List<String> roversCommands = new ArrayList<String>();
+    private static final List<Rover> rovers = new ArrayList<Rover>();
 
 
 
     public static void main(String[] args) {
         openFile();
         setMap();
-        getRoversInitialLocation();
+        getRoversInitialLocationAndRoversCommands();
         landRovers();
         moveRovers();
         OutputFinalPosition();
@@ -32,17 +30,17 @@ public class RoverMarsJava {
 
 
     private static void openFile() {
-        BufferedReader reader = null;
+        BufferedReader reader;
         try {
             reader = new BufferedReader(new FileReader(new File("src/input.txt")));
-            saveInputinArray(reader);
+            saveInputInArray(reader);
         }
         catch (IOException e) {
-            System.out.println(e);
+            System.out.println("File not found!");
         }
     }
 
-    private static void saveInputinArray(BufferedReader reader) throws IOException {
+    private static void saveInputInArray(BufferedReader reader) throws IOException {
         String line;
         while ((line = reader.readLine()) != null) {
             instructions.add(line);
@@ -57,7 +55,7 @@ public class RoverMarsJava {
         map = new Map(x, y);
     }
 
-    private static void getRoversInitialLocation() {
+    private static void getRoversInitialLocationAndRoversCommands() {
         for (int i = 0; i < instructions.size(); i++) {
             if (i % 2 != 0) {
                 roversLandingPosition.add(instructions.get(i));
@@ -74,8 +72,8 @@ public class RoverMarsJava {
             int x = Integer.parseInt(roverPosition[0]);
             int y = Integer.parseInt(roverPosition[1]);
             char d = roverLanding.charAt(4);
-            coordinates = new Coordinates(x, y, d, map);
-            rover = new Rover(coordinates);
+            Coordinates coordinates = new Coordinates(x, y, d, map);
+            Rover rover = new Rover(coordinates);
             rovers.add(rover);
         }
     }
