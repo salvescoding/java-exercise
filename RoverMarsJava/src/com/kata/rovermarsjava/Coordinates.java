@@ -78,30 +78,23 @@ public class Coordinates {
 
 
     public void turnRight() {
-        int indexOrientation = getIndexOfCompass();
-        if (indexOrientation == (compass.length - 1)) {
+        if (getIndexOfCompass() == (compass.length - 1)) {
             setDirection('N');
         }
         else {
-            int newIndex = indexOrientation + 1;
-            char newOrientation = compass[newIndex];
-            setDirection(newOrientation);
+            setDirection(compass[getIndexOfCompass() + 1]);
         }
     }
 
     public void turnLeft() {
-        int indexOrientation = getIndexOfCompass();
-        if (indexOrientation == 0) {
+        if (getIndexOfCompass() == 0) {
             setDirection('W');
         }
         else {
-            int newIndex = indexOrientation - 1;
-            char newOrientation = compass[newIndex];
-            setDirection(newOrientation);
+            setDirection(compass[getIndexOfCompass() - 1]);
         }
 
     }
-
 
     private int getIndexOfCompass() {
         int index = 0;
