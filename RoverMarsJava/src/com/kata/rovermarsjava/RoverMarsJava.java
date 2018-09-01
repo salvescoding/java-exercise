@@ -1,66 +1,71 @@
 package com.kata.rovermarsjava;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 
 class RoverMarsJava {
 
-    private static final List<String> instructions = new ArrayList<String>();
+    private static final List<String> instructions = new ArrayList<>();
     private static Map map;
-    private static final List<String> roversLandingPosition = new ArrayList<String>();
-    private static final List<String> roversCommands = new ArrayList<String>();
-    private static final List<Rover> rovers = new ArrayList<Rover>();
+    private static final List<String> roversLandingPosition = new ArrayList<>();
+    private static final List<String> roversCommands = new ArrayList<>();
+    private static final List<Rover> rovers = new ArrayList<>();
 
 
 
     public static void main(String[] args) {
         openFile();
-        setMap();
-        getRoversInitialLocationAndRoversCommands();
+        String[] mapValues = getMap();
+        setMap(mapValues);
+        getRoversInitialPosition();
+        getRoversCommands();
         landRovers();
         moveRovers();
         OutputFinalPosition();
     }
 
 
-
     private static void openFile() {
         BufferedReader reader;
         try {
             reader = new BufferedReader(new FileReader(new File("src/input.txt")));
-            saveInputInArray(reader);
+            saveFileInputInInstructions(reader);
         }
         catch (IOException e) {
             System.out.println("File not found!");
         }
     }
 
-    private static void saveInputInArray(BufferedReader reader) throws IOException {
+    private static void saveFileInputInInstructions(BufferedReader reader) throws IOException {
         String line;
         while ((line = reader.readLine()) != null) {
             instructions.add(line);
         }
     }
 
-    private static void setMap() {
-        String values = instructions.get(0);
-        String[] mapValues = values.split(" ");
-        int x =  Integer.parseInt(mapValues[0]);
-        int y =  Integer.parseInt(mapValues[1]);
-        map = new Map(x, y);
+    private static String[] getMap() {
+        return instructions.get(0).split(" ");
+
     }
 
-    private static void getRoversInitialLocationAndRoversCommands() {
+    private static void setMap(String[] mapValues) {
+        map = new Map(Integer.parseInt(mapValues[0]), Integer.parseInt(mapValues[1]));
+    }
+
+    private static void getRoversInitialPosition() {
         for (int i = 0; i < instructions.size(); i++) {
             if (i % 2 != 0) {
                 roversLandingPosition.add(instructions.get(i));
             }
-            else if ((i != 0) && (i % 2 == 0)) {
+        }
+    }
+
+
+    private static void getRoversCommands() {
+        for (int i = 0; i < instructions.size(); i++) {
+            if ((i != 0) && (i % 2 == 0)) {
                 roversCommands.add(instructions.get(i));
             }
         }
