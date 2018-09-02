@@ -11,14 +11,15 @@ class CoordinatesTest {
 
     @BeforeEach
     void setUp() {
-        Map map = new Map(5, 5);
-        coordinates = new Coordinates(1, 2, 'N', map);
+        Point x = new Point(1, 5);
+        Point y = new Point(2, 5);
+        coordinates = new Coordinates(x, y, 'N');
     }
 
     @Test
-    void shouldInstanceWithXAndY() {
-        assertEquals(coordinates.getX(), 1);
-        assertEquals(coordinates.getY(), 2);
+    void shouldInstanceRoverInitialPositionWithCorrectXAndY() {
+        assertEquals(coordinates.getRoverXPoint(), 1);
+        assertEquals(coordinates.getRoverYPoint(), 2);
     }
 
     @Test

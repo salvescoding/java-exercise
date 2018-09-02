@@ -8,17 +8,16 @@ import java.util.List;
 class RoverMarsJava {
 
     private static final List<String> instructions = new ArrayList<>();
-    private static Map map;
     private static final List<String> roversLandingPosition = new ArrayList<>();
     private static final List<String> roversCommands = new ArrayList<>();
     private static final List<Rover> rovers = new ArrayList<>();
+    private static String[] mapValues;
 
 
 
     public static void main(String[] args) {
         openFile();
-        String[] mapValues = getMap();
-        setMap(mapValues);
+        mapValues = getMap();
         getRoversInitialPosition();
         getRoversCommands();
         landRovers();
@@ -48,10 +47,7 @@ class RoverMarsJava {
     private static String[] getMap() {
         return instructions.get(0).split(" ");
 
-    }
 
-    private static void setMap(String[] mapValues) {
-        map = new Map(Integer.parseInt(mapValues[0]), Integer.parseInt(mapValues[1]));
     }
 
     private static void getRoversInitialPosition() {
@@ -76,8 +72,10 @@ class RoverMarsJava {
             String[] roverPosition = roverLanding.split(" ");
             int x = Integer.parseInt(roverPosition[0]);
             int y = Integer.parseInt(roverPosition[1]);
+            Point xPoint = new Point(x,Integer.parseInt(mapValues[0]));
+            Point yPoint = new Point(y,Integer.parseInt(mapValues[1]));
             char d = roverLanding.charAt(4);
-            Coordinates coordinates = new Coordinates(x, y, d, map);
+            Coordinates coordinates = new Coordinates(xPoint, yPoint, d);
             Rover rover = new Rover(coordinates);
             rovers.add(rover);
         }

@@ -1,22 +1,38 @@
 package com.kata.rovermarsjava;
 
+import java.io.PipedInputStream;
+
 public class Coordinates {
 
-    private int x;
-    private int y;
-    private char direction;
-    private Map map;
+
     private static final char[] compass = new char[]{'N', 'E', 'S', 'W'};
+    private char direction;
+    private Point x;
+    private Point y;
 
-    public int getX() { return x; }
+    public int getRoverXPoint() { return x.getRoverPoint(); }
 
-    private void setX(int x) {
+    private void setX(Point x) {
         this.x = x;
     }
 
-    public int getY() { return y; }
+    public int getMapX() { return x.getMapMax(); }
 
-    private void setY(int y) {
+    private void setRoverXPoint(int x) {
+        this.x.setRoverPoint(x);
+    }
+
+    public int getRoverYPoint() { return y.getRoverPoint(); }
+
+    private void setRoverYPoint(int y) {
+        this.y.setRoverPoint(y);
+    }
+
+    public int getMapY() {
+        return y.getMapMax();
+    }
+
+    private void setY(Point y) {
         this.y = y;
     }
 
@@ -26,17 +42,11 @@ public class Coordinates {
         this.direction = direction;
     }
 
-    public Map getMap() { return map; }
 
-    private void setMap(Map map) {
-        this.map = map;
-    }
-
-    public Coordinates(int x, int y, char direction, Map map) {
+    public Coordinates(Point x, Point y, char direction) {
         setX(x);
         setY(y);
         setDirection(direction);
-        setMap(map);
     }
 
     public void move(char orientation) {
@@ -53,26 +63,26 @@ public class Coordinates {
     }
 
     private void moveWest() {
-        if (getX() > 0)  {
-            setX(getX() - 1);
+        if (getRoverXPoint() > 0)  {
+            setRoverXPoint(getRoverXPoint() - 1);
         }
     }
 
     private void moveSouth() {
-        if (getY() > 0) {
-            setY(getY() - 1);
+        if (getRoverYPoint() > 0) {
+            setRoverYPoint(getRoverYPoint() - 1);
         }
     }
 
     private void moveEast() {
-        if (getX() < getMap().getX()) {
-            setX(getX() + 1);
+        if (getRoverXPoint() < getMapX()) {
+            setRoverXPoint(getRoverXPoint() + 1);
         }
     }
 
     private void moveNorth() {
-        if (getY() < getMap().getY()) {
-            setY(getY() + 1);
+        if (getRoverYPoint() < getMapY()) {
+            setRoverYPoint(getRoverYPoint() + 1);
         }
     }
 
@@ -108,7 +118,7 @@ public class Coordinates {
 
     @Override
     public String toString() {
-        return getX() + " " + getY() + " " + getDirection();
+        return getRoverXPoint() + " " + getRoverYPoint() + " " + getDirection();
     }
 
 
