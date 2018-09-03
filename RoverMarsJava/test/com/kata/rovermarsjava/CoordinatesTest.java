@@ -29,40 +29,40 @@ class CoordinatesTest {
 
     @Test
     void shouldInstanceWithMapXAndYParams(){
-        assertEquals(5, coordinates.getMap().getX());
-        assertEquals(5, coordinates.getMap().getY());
+        assertEquals(5, coordinates.getMapX());
+        assertEquals(5, coordinates.getMapY());
     }
 
     @Test
     void positionYShouldIncreaseWhenMoveWithOrientationNorth() {
-        int expected = coordinates.getY() + 1;
+        int expected = coordinates.getRoverYPoint() + 1;
         coordinates.setDirection('N');
         coordinates.move(coordinates.getDirection());
-        assertEquals(expected, coordinates.getY());
+        assertEquals(expected, coordinates.getRoverYPoint());
     }
 
     @Test
     void positionXShouldIncreaseWhenMoveWithOrientationEast() {
-        int expected = coordinates.getX() + 1;
+        int expected = coordinates.getRoverXPoint() + 1;
         coordinates.setDirection('E');
         coordinates.move(coordinates.getDirection());
-        assertEquals(expected, coordinates.getX());
+        assertEquals(expected, coordinates.getRoverXPoint());
     }
 
     @Test
     void positionYShouldDecreaseWhenMoveWithOrientationSouth() {
-        int expected = coordinates.getY() - 1;
+        int expected = coordinates.getRoverYPoint() - 1;
         coordinates.setDirection('S');
         coordinates.move(coordinates.getDirection());
-        assertEquals(expected, coordinates.getY());
+        assertEquals(expected, coordinates.getRoverYPoint());
     }
 
     @Test
     void positionXShouldDecreaseWhenMoveWithOrientationWest() {
-        int expected = coordinates.getX() - 1;
+        int expected = coordinates.getRoverXPoint() - 1;
         coordinates.setDirection('W');
         coordinates.move(coordinates.getDirection());
-        assertEquals(expected, coordinates.getX());
+        assertEquals(expected, coordinates.getRoverXPoint());
     }
 
     @Test
