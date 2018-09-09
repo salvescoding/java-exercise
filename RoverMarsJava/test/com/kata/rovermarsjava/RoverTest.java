@@ -8,94 +8,88 @@ import static org.junit.jupiter.api.Assertions.*;
 class RoverTest {
 
     private Rover rover;
-    private Coordinates coordinates;
+    private Map map;
 
     @BeforeEach
     void beforeRoverTest() {
-        Point x = new Point(1, 5);
-        Point y = new Point(2, 5);
-        coordinates = new Coordinates(x, y, 'N');
-        rover = new Rover(coordinates);
+        map = new Map(5,5);
+        int x = 1;
+        int y = 2;
+        rover = new Rover(x, y, 'N', map);
     }
 
-    @Test
-    void roverGetsInitializedWithCorrectParams() {
-        assertSame(rover.getCoordinates(), coordinates);
-    }
+
 
     @Test
     void roverYLocationShouldIncreaseByOneWhenReceiveSingleCommandMFacingNorth() {
-        int expected = rover.getCoordinates().getRoverYPoint() + 1;
+        int expected = rover.getY() + 1;
         rover.receiveCommands("M");
-        assertEquals(expected, rover.getCoordinates().getRoverYPoint());
+        assertEquals(expected, rover.getY());
     }
 
     @Test
     void roverYLocationShouldDecreaseByOneWhenReceiveSingleCommandMFacingSouth() {
-        int expected = rover.getCoordinates().getRoverYPoint() - 1;
-        rover.getCoordinates().setDirection('S');
+        int expected = rover.getY() - 1;
+        rover.setOrientation('S');
         rover.receiveCommands("M");
-        assertEquals(expected, rover.getCoordinates().getRoverYPoint());
+        assertEquals(expected, rover.getY());
     }
 
     @Test
     void roverXLocationShouldIncreaseByOneWhenReceiveSingleCommandMFacingEast() {
-        int expected = rover.getCoordinates().getRoverXPoint() + 1;
-        rover.getCoordinates().setDirection('E');
+        int expected = rover.getX() + 1;
+        rover.setOrientation('E');
         rover.receiveCommands("M");
-        assertEquals(expected, rover.getCoordinates().getRoverXPoint());
+        assertEquals(expected, rover.getX());
     }
 
     @Test
     void roverXLocationShouldDecreaseByOneWhenReceiveSingleCommandMFacingWest() {
-        int expected = rover.getCoordinates().getRoverXPoint() - 1;
-        rover.getCoordinates().setDirection('W');
+        int expected = rover.getX() - 1;
+        rover.setOrientation('W');
         rover.receiveCommands("M");
-        assertEquals(expected, rover.getCoordinates().getRoverXPoint());
+        assertEquals(expected, rover.getX());
     }
 
     @Test
     void roverShouldGetFinalOutcomeCorrectForTestCaseOne() {
         rover.receiveCommands("LMLMLMLMM");
-        assertEquals(1, rover.getCoordinates().getRoverXPoint());
-        assertEquals(3, rover.getCoordinates().getRoverYPoint());
-        assertEquals('N', rover.getCoordinates().getDirection());
+        assertEquals(1, rover.getX());
+        assertEquals(3, rover.getY());
+        assertEquals('N', rover.getOrientation());
     }
 
     @Test
     void roverShouldGetFinalOutcomeCorrectForTestCaseTwo() {
-        Point x = new Point(3, 5);
-        Point y = new Point(3, 5);
-        Coordinates coordinatesTwo = new Coordinates(x,y,'E');
-        Rover roverTwo = new Rover(coordinatesTwo);
-        roverTwo.receiveCommands("MMRMMRMRRM");
-        assertEquals(5, roverTwo.getCoordinates().getRoverXPoint());
-        assertEquals(1, roverTwo.getCoordinates().getRoverYPoint());
-        assertEquals('E', roverTwo.getCoordinates().getDirection());
+        Rover roverOne = new Rover(3, 3, 'E', map);
+        roverOne.receiveCommands("MMRMMRMRRM");
+        assertEquals(5, roverOne.getX());
+        assertEquals(1, roverOne.getY());
+        assertEquals('E', roverOne.getOrientation());
     }
 
     @Test
     void roverShouldNotExitTheMapGridWhenMovingNorth() {
         rover.receiveCommands("LMLMLMLMMMMMR");
-        assertEquals(1, rover.getCoordinates().getRoverXPoint());
-        assertEquals(5, rover.getCoordinates().getRoverXPoint());
-        assertEquals('E', rover.getCoordinates().getDirection());
+        assertEquals(1, rover.getX());
+        assertEquals(5, rover.getY());
+        assertEquals('E', rover.getOrientation());
     }
 
     @Test
     void roverShouldNotExitTheMapGridWhenMovingEast() {
         rover.receiveCommands("RMMMMM");
-        assertEquals(5, rover.getCoordinates().getRoverXPoint());
-        assertEquals(2, rover.getCoordinates().getRoverYPoint());
-        assertEquals('E', rover.getCoordinates().getDirection());
+        assertEquals(5, rover.getX());
+        assertEquals(2, rover.getY());
+        assertEquals('E', rover.getOrientation());
     }
 
     @Test
     void roverShouldNotExitTheMapGridWhenMovingMinSouthAndMinWest() {
         rover.receiveCommands("LMMLMMMLMMLM");
-        assertEquals(2, rover.getCoordinates().getRoverXPoint());
-        assertEquals(1, rover.getCoordinates().getRoverYPoint());
-        assertEquals('N', rover.getCoordinates().getDirection());
+        assertEquals(2, rover.getX());
+        assertEquals(1, rover.getY());
+        assertEquals('N', rover.getOrientation());
     }
 
 
